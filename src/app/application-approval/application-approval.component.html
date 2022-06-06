@@ -1,0 +1,25 @@
+<p>application-approval works!</p>
+<form (ngSubmit)="  applicationapproval()">
+    <div>
+        <label for="applicationid"> ApplicationId</label>
+        <input type="number" name="applicationid" [(ngModel)]="applicationId" required
+            placeholder="Enter ApplicationId">
+    </div>
+    <button type="submit">Submit</button>
+    <div>
+        <table class="table table-bordered">
+
+            <thead>
+                <tr>
+                    <th>Application Approval</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="user != null">
+                    <td>{{user | json}}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</form>

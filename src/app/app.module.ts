@@ -11,6 +11,14 @@ import { ListUsersComponent } from './list-users/list-users.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import{HttpClientModule} from '@angular/common/http';
+import { RegUsersComponent } from './reg-users/reg-users.component';
+import { ApplyComponent } from './apply/apply.component';
+import { ApplicationApprovalComponent } from './application-approval/application-approval.component';
+import { ApplicationStatusComponent } from './application-status/application-status.component';
+import { SelectDepartmentComponent } from './select-department/select-department.component';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -20,14 +28,22 @@ import{HttpClientModule} from '@angular/common/http';
     RegisterComponent,
     LoginComponent,
     ListUsersComponent,
-    ViewUserComponent
+    ViewUserComponent,
+    RegUsersComponent,
+    ApplyComponent,
+    ApplicationApprovalComponent,
+    ApplicationStatusComponent,
+    SelectDepartmentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,44 @@
 <p>register works!</p>
 
 <form (ngSubmit)="register()">
-    
-    <button type="submit">Submit</button>
+    <section class="box">
+        <div>
+            <label for="name">FirstName </label>
+            <input type="text" name="firstname" [(ngModel)]="firstName" required placeholder="Enter FirstName"
+                autofocus>
+        </div>
+<br>
+
+
+        <div>
+            <label for="name">LastName </label>
+            <input type="text" name="lastname" [(ngModel)]="lastName" required placeholder="Enter LastName">
+        </div><br>
+        <div>
+            <label for="role"> Role</label>
+            <input type="role" name="role" [(ngModel)]="role" required placeholder="Enter role">
+        </div><br>
+        <div>
+            <label for="mobileNumber"> MobileNumber</label>
+            <input type="text" name="mobilenumber" [(ngModel)]="mobileNumber" required placeholder="Enter mobileNumber">
+        </div><br>
+        <div>
+            <label for="name">Email </label>
+            <input type="email" name="email" [(ngModel)]="email" required placeholder="Enter Email">
+        </div><br>
+        <div>
+            <label for="password">Password </label>
+            <input type="text" name="password" [(ngModel)]="password" required placeholder="Password">
+        </div><br>
+        <div>
+            <label for="confirmpassword">ConfirmPassword </label>
+            <input type="text" name="confirmpassword" [(ngModel)]="confirmPassword" required
+                placeholder="ConfirmPassword">
+        </div><br>
+
+
+        <button type="submit">Submit</button>
+
+    </section>
+
 </form>

@@ -1,0 +1,27 @@
+<p>application-status works!</p>
+<form (ngSubmit)="applicationstatus()">
+    <div>
+        <label for="userId"> userId</label>
+        <input type="number" name="userId" [(ngModel)]="userId" required
+            placeholder="Enter userId">
+    </div>
+    <button type="submit">Submit</button>
+    <!-- {{user | json}} -->
+    <div>
+        <table class="table table-bordered">
+
+            <thead>
+                <tr>
+                    <th>Application Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="user != null">
+                    <td>{{user | json}}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+</form>

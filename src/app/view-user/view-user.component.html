@@ -1,1 +1,57 @@
 <p>view-user works!</p>
+<form (ngSubmit)="viewregistereduser()">
+    <div>
+        <label for="applicationid"> ApplicationId</label>
+        <input type="number" name="applicationid" [(ngModel)]="applicationId" required
+            placeholder="Enter ApplicationId">
+    </div>
+    <button type="submit">Submit</button>
+</form>
+<!-- {{users | json}} -->
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>s.no</th>
+            <th>FatherName</th>
+            <th>MotherName</th>
+            <th>DOB</th>
+            <th>Nationality</th>
+            <th>Gender</th>
+            <th>SSLC Board</th>
+            <th>SSLC Mark</th>
+            <th>SSLC Year Of Passing</th>
+            <th>HSC Board</th>
+            <th>HSC Stream</th>
+            <th>HSC Percentage</th>
+            <th>HSC Year Of Passing</th>
+            <th>Department</th>
+            <th>Application Status</th>
+            <th>Address</th>
+            <th>District</th>
+            <th>State</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="user != null">
+            <td>1</td>
+            <td>{{user.fathername}}</td>
+            <td>{{user.mothername}}</td>
+            <td>{{user.dob}}</td>
+            <td>{{user.nationality}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.sslcboard}}</td>
+            <td>{{user.sslcmark}}</td>
+            <td>{{user.sslcyearofpassing}}</td>
+            <td>{{user.hscboard}}</td>
+            <td>{{user.hscstream}}</td>
+            <td>{{user.hscpercentage}}</td>
+            <td>{{user.hscyearofpassing}}</td>
+            <td>{{user.department}}</td>
+            <td>{{user.appliactionstatus}}</td>
+            <td>{{user.address}}</td>
+            <td>{{user.district}}</td>
+            <td>{{user.state}}</td>
+        </tr>
+    </tbody>
+</table>

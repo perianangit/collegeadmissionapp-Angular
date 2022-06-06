@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +18,7 @@ export class RegisterComponent implements OnInit {
   confirmPassword!: string;
 
 
-  constructor(private http:HttpClient) {}
+  constructor(private http:HttpClient,private toastr: ToastrService) {}
    
 
   ngOnInit(): void {
@@ -25,22 +26,22 @@ export class RegisterComponent implements OnInit {
   register() {
      const userObj={
       
-        "firstname":"dube",
-        "lastname":"A",
-        "role":"Student",
-        "mobilenumber":"0986766621",
-        "email":"dube@gmail.com",
-        "password":"duberstudent@123",
-        "confirmpassword":"duberstudent@123"
+        "firstname":this.firstName,
+        "lastname":this.lastName,
+        "role":this.role,
+        "mobilenumber":this.mobileNumber,
+        "email":this.email,
+        "password":this.password,
+        "confirmpassword":this.confirmPassword
     
      };
      const url="http://localhost:9000/userregister/register";
      this.http.post(url,userObj).subscribe((res)=>{
        console.log(res);
-       alert("successfully Registered");
+       this.toastr.success("successfully Registered");
      },(err)=>{
        console.log(err);
-       alert("Please re-enter your Details");
+       this.toastr.error("Please re-enter your Details");
      })
   }
 }

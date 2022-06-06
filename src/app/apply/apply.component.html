@@ -1,0 +1,79 @@
+<p>apply works!</p>
+<form (ngSubmit)="apply()">
+    <div>
+        <label for="name">fatherName </label>
+        <input type="text" name="fatherName" [(ngModel)]="fatherName" required placeholder="Enter FatherName" autofocus><br>
+    
+        <label for="name">MotherName </label>
+        <input type="text" name="motherName" [(ngModel)]="motherName" required placeholder="Enter MotherName"><br>
+
+        <label for="dob">DOB </label>
+        <input type="date" name="dob" id="dob"[(ngModel)]="dob" required placeholder="Enter your date of birth"><br>
+
+        <label for="nationality">Nationality </label>
+        <input type="text" name="nationality" [(ngModel)]="nationality" required placeholder="Enter nationality"><br>
+
+        <label for="gender">Gender </label>
+        <select id="gender" name="gender" [(ngModel)]="gender" required >
+            <option value="" disabled  >---select---</option>
+            <option value="Male">Male</option>
+            <option value="Female" selected>Female</option>
+        </select><br>
+
+        <label for="sslcboard">sslc Board</label>
+        <select name="sslcboard " id="sslcboard" required [(ngModel)]="sslcBoard">
+            <option value="" disabled  >---select---</option>
+            <option value="stateboard" selected>StateBoard</option>
+            <option value="cbse" >CBSE</option>
+            <option value="icic" >ICIC</option>
+        </select><br>
+
+        <label for="sslcmark">SSLC Mark</label>
+        <input type="mark" name="sslcmark"  [(ngModel)]="sslcMark" min="0" max="100" placeholder="Enter your sslc mark" required><br>
+
+        <label for="sslcyear">SSLC YearOfPassing</label>
+        <select name="sslcyear" id="sslcyear" [(ngModel)]="sslcYear">
+            <option *ngFor="let year of years" [value]="year">{{ year }}</option> 
+          </select><br>
+
+        <label for="hscboard">Hsc Board</label>
+        <select name="hscboard" id="hscboard" required [(ngModel)]="hscBoard">
+            <option value="" disabled  >---select---</option>
+            <option value="stateboard" selected>StateBoard</option>
+            <option value="cbse" >CBSE</option>
+            <option value="icic" >ICIC</option>
+        </select><br>
+
+        <label for="hscStream">Hsc Stream</label>
+        <select name="hscStream" id="hscStream" required [(ngModel)]="hscStream">
+            <option value="" disabled  >---select---</option>
+            <option value="cs" selected>ComputerScience</option>
+            <option value="biology" >Biology</option>
+            <option value="commerce" >Commerce</option>
+        </select><br>
+
+        <label for="hscPercentage">HSC Mark</label>
+        <input type="mark" name="hscPercentage"  [(ngModel)]="hscPercentage" min="0" max="100" placeholder="Enter your sslc mark" required><br>
+            
+        <label for="hscYear">HSC YearOfPassing</label>
+        <select name="hscYear" id="hscYear"[(ngModel)]="hscYear" >
+            <option *ngFor="let year of years" [value]="year">{{ year }}</option> 
+          </select><br>
+
+          <label for="Address">Address </label>
+        <input type="text" name="address" [(ngModel)]="address" required placeholder="Enter your address"><br>
+
+        <label for="district">District </label>
+        <input type="text" name="district" [(ngModel)]="district" required placeholder="Enter your district"><br>
+
+        <label for="State">State </label>
+        <input type="text" name="state" [(ngModel)]="state" required placeholder="Enter your State"><br>
+
+        
+
+
+    </div>
+        
+    
+    <button type="submit">Submit</button>
+</form>
